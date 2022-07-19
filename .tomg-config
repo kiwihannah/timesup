@@ -1,0 +1,37 @@
+[
+  {
+    "resultsPath": "C:\\Users\\kiwih\\OneDrive\\바탕 화면\\PROJ\\timesup\\output",
+    "pluralizeNames": true,
+    "noConfigs": false,
+    "convertCaseFile": "pascal",
+    "convertCaseEntity": "pascal",
+    "convertCaseProperty": "camel",
+    "convertEol": "CRLF",
+    "propertyVisibility": "none",
+    "lazy": false,
+    "activeRecord": false,
+    "generateConstructor": false,
+    "customNamingStrategyPath": "",
+    "relationIds": false,
+    "strictMode": "none",
+    "skipSchema": false,
+    "indexFile": false,
+    "exportType": "named"
+  },
+  {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "databaseNames": [
+      "slack"
+    ],
+    "user": "root",
+    "password": "@Cjdcns218",
+    "databaseType": "mysql",
+    "schemaNames": [
+      ""
+    ],
+    "ssl": false,
+    "skipTables": [],
+    "onlyTables": []
+  }
+]
