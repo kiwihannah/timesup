@@ -5,6 +5,8 @@ import { User } from '../users/entities/user.entity';
 import { Channel } from '../channels/entities/channel.entity';
 import { Dm } from '../dms/entities/dm.entity';
 import { Workspace } from '../workspaces/entities/workspace.entity';
+import { Todo } from '../todos/entities/todo.entity';
+
 
 export class DatabaseService {
   constructor(private config: ConfigService) { }
@@ -12,7 +14,7 @@ export class DatabaseService {
   public getTypeOrmConfig(): TypeOrmModuleOptions {
     console.log(`★★★ DB CONNECTED-> ${this.config.get('DB_HOST')} ★★★`)
     return {
-      type: 'mariadb',
+      type: 'mysql',
       host: this.config.get('DB_HOST'),
       port: +this.config.get('DB_PORT'),
       username: this.config.get('DB_USERNAME'),
@@ -20,7 +22,7 @@ export class DatabaseService {
       database: this.config.get('DB_NAME'),
       synchronize: this.config.get('NODE_ENV') === 'dev' ? true : false,
       logging: this.config.get('NODE_ENV') === 'dev' ? true : false,
-      entities: [User, Channel, Dm, Workspace],
+      entities: [User, Channel, Dm, Workspace, Todo],
     };
   }
 }

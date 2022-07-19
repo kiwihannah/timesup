@@ -1,4 +1,5 @@
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Todo } from 'src/todos/entities/todo.entity';
+import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 
 @Entity('users', { schema: 'slack' })
 export class User extends BaseEntity {
@@ -16,4 +17,9 @@ export class User extends BaseEntity {
 
   @Column({ type: 'datetime', name: 'JOIN_DATE', default: () => 'CURRENT_TIMESTAMP' })
   joinDate: Date;
+
+  @OneToMany(type => Todo, todos => todos.todoId, {
+    cascade: false
+  })
+  todos: Todo[];
 }
